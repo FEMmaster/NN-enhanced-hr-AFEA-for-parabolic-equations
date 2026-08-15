@@ -30,6 +30,34 @@ fealpy==1.1.20
 
 Users are strongly recommended to use this specific version. Newer versions of FEALPy may use different finite element interfaces and therefore may not run the code without modification.
 
+## Code Structure
+
+Two local modules provide the main auxiliary components used by the Python implementation.
+
+### `mesh_regenerator.py`
+
+This module contains the mesh regeneration procedures used in the adaptive computations, including the routines for the standard computational domain and the L-shaped domain.
+
+### `module_ML.py`
+
+This module contains the machine-learning-based approximation components used in the adaptive interpolation and solution-transfer procedure.
+
+The `NN` implementation corresponds to the neural network component used in the numerical method presented in the associated paper.
+
+The module also contains several alternative models,
+
+```text
+ELM
+RBF
+RBFNN
+```
+
+which were implemented during the development of the code for exploratory numerical testing. These models are retained as optional extensions for users who may wish to investigate alternative approximation strategies.
+
+The ELM, RBF, and RBFNN variants are **not part of the numerical method or numerical results reported in the associated paper**. The repository provides executable implementations of these variants, but they are included primarily for exploratory use. No guarantee is made regarding their numerical accuracy, robustness, parameter choices, convergence behavior, or applicability to all test problems.
+
+Users interested in these optional extensions should refer directly to the implementations in `module_ML.py` and are expected to assess and, where necessary, adjust the corresponding settings for their own experiments.
+
 ## C++ Implementation
 
 The original C++ implementation is provided in:
