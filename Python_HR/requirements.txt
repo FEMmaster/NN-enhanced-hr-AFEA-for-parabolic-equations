@@ -1,0 +1,23 @@
+# Core numerical dependencies
+numpy==1.24.4
+scipy==1.10.1
+
+# Finite element library
+# IMPORTANT: this code uses the legacy FEALPy API and has been tested
+# specifically with FEALPy 1.1.20.
+fealpy==1.1.20
+
+# Neural network
+torch==2.4.1
+
+# Visualization
+matplotlib==3.7.5
+
+# Mesh / output utilities
+gmsh==4.13.1
+meshio==5.3.5
+vtk==9.3.1
+
+## Requirements
+The code was tested with PyTorch 2.4.1 and CUDA 11.8. 
+Users may install either the CPU or CUDA build of PyTorch 2.4.1 according to their hardware environment.
